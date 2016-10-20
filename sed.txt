@@ -1,0 +1,10 @@
+sed -e "script" filepath
+
+address ranges:
+	sed -e "1,10d" filepath		# deletes the first 10 lines
+
+address regex:
+	sed -e "/^[\s]*var/d" filepath	# deletes any line starting w/ 'var'
+
+address regex range:
+	sed -n -e "/BEGIN/,/END/p" filepath		# prints 

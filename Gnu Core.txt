@@ -1,0 +1,35 @@
+gawk
+	pattern / procedure
+
+	each line of text is a record and each word a field
+		$0 = entire line
+		$1, $2 = individual fields
+
+
+sed
+= stream editor
+	sed -e "script" input.file
+	sed -f script.file input.file
+	sed -n 	# doesn't auto-output every line
+
+	address ranges:
+		sed -e "1,10d" filepath		# deletes the first 10 lines
+
+	address regex:
+		sed -e "/^[\s]*var/d" filepath	# deletes any line starting w/ 'var'
+
+	address regex range:
+		sed -n -e "/BEGIN/,/END/p" filepath		# prints 
+
+	commands:
+		p		outputs the pattern space
+		s		substitute
+		=		print line number
+		n 		read next line immediately
+		
+
+sort
+	sort -t";" +0f -1 +1ln input.file
+		-t";"		sets field delimiter to semicolon
+		+0f -1		first sort key at field 0, end before reaching field 1, case-insensitive
+		+1ln		next sort key begins at field 1, by numeric ascending
