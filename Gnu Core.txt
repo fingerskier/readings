@@ -5,6 +5,10 @@ gawk
 		$0 = entire line
 		$1, $2 = individual fields
 
+	/regex/ { command }
+
+	awk -F, ...		changed delimiter to a comma	
+
 
 sed
 = stream editor
@@ -21,12 +25,45 @@ sed
 	address regex range:
 		sed -n -e "/BEGIN/,/END/p" filepath		# prints 
 
+	a sed command can specify 0-2 addresses
+
+	an address is
+		a regex
+		a line number
+		?line addressing symbol?
+
 	commands:
 		p		outputs the pattern space
 		s		substitute
+			[address]s/pattern/replacement/flags
+			flags:
+				n	number
+				g	global
+				#	a number after 'g' refers to the match position
+				p	print
+				w	write
+			replacement metacharacters:
+				\	??? 
+				&	matched string
+				\#	numbered matches
 		=		print line number
 		n 		read next line immediately
-		
+		d		delete line
+		a\		places supplied text after the current line
+		i\		places supplied text before the current line
+		c\		replaces the current line with the supplied text
+		1d		delete line #1
+		$d 		delete last line
+		/^$/d	regex, delete blank lines
+		/^\.TS/,/^\.TE/d
+				deletes a range of lines matched between the two patterns
+		50,$d	deletes from line 50 to the end of the file
+		1,/^$/d deletes from the first line to the first blank line
+		!		reverses a match
+		{}		grouping commands
+				the opening brace must end a line
+				the closing brace must be on it's own line
+
 
 sort
 	sort -t";" +0f -1 +1ln input.file
