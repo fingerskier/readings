@@ -1,0 +1,102 @@
+Industrial Ethernet
+
+
+Ethernet dates to 1970's
+	IEEE 802.3
+
+IEEE 802.3u = 12Megabytes per second
+Full Duplex
+Anti-collision, PTP links
+
+ISO/OSI Model
+	International Standards Organization
+	Open Standards Interconnection
+
+"All People Seem To Need Data Processing"
+
+7. Application Layer
+6. Presentation
+5. Session
+4. Transport	|	TCP/UDP
+3. Network		|	IP
+2. Data-link	|	ethernet
+1. Physical		|	ethernet
+
+Internet Model
+	4. HTTP/SNMP/Socket/PROFINET
+	3. TCP/UDP
+	2. IP
+	1. Ethernet
+
+MAC = Media Access Control / physical address
+
+Ethernet Frame
+	Preamble
+	SFD
+	Destination MAC
+	Source MAC
+	Length/Type
+	Data
+	Frame Check Sequence
+
+Encapsulation ~ higher layers add headers to each frame (packet) which increases size and processing time
+
+TCP
+	Transmission Control Protocol
+	internet-based
+	connection-based
+	error control
+	half-duplex
+	Layer-4
+
+UDP
+	User Datagram Protocol
+	connectionless protocol
+	speed-based
+	no error correction
+
+
+Components
+	Hub
+		repeater
+		layer-1
+		not recommended
+
+	Switch
+		port restricted (by MAC address)
+		layer-2
+		needed features:
+			100MB
+			auto-negotiation
+			managed (PnP)
+			trunking (link aggregation)
+			port mirroring
+			VLAN
+				QoS (Quality of Service)
+				able to prioritize frames based on a field
+
+	Router
+		can interconnect networks
+		layer-3
+	Gateway
+		can interconnect application protocols
+		layer-7
+
+Types
+	LAN
+	WAN (requires routing)
+	MAN (requires routing)
+
+Topologies
+	Tree
+	Star
+	Line
+	Ring
+
+	Tree/Star are more efficient for administration
+
+	Line/Ring are more efficient for processing
+
+hostnames
+	DNS ~ Domain Name Service
+

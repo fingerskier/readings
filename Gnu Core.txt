@@ -8,6 +8,91 @@ gawk
 	/regex/ { command }
 
 	awk -F, ...		changed delimiter to a comma	
+	FS ~ Field Separator
+		default = whitespace
+		":" ~ single character means split at EVERY match
+		"asdf*" ~ multiple character means regex
+
+	escaped characters
+		\a		alert (beep)
+		\b		backspace
+		\f		formfeed
+		\n		newline
+		\r		carriage return
+		\t		horizontal tab
+		\v		vertical tab
+		\ddd	octal char value
+		\xhex	hex char value
+		\c		literal character
+
+	variables via "x = 1"
+
+	concatenation: z = "Hello" "world"
+
+	fields ~ y = $2
+
+	Operators
+		+		addition
+		-		subtraction
+		*		multiplication
+		/		division
+		%		modulo
+		^		exponentiation
+		**		exponentiation
+
+		++		increment
+		--		decrement
+		+=		add and assign
+		-=		subtract and assign
+		*=		multiply and assign
+		/=		divide and assign
+		%=		modulo and assign
+		^=		exponentiate and assign
+		**=		exponentiate and assign
+
+		<		less than
+		>		greater than
+		<=		less than or equal
+		>=		greater than or equal
+		==		equal
+		!=		not equal
+		~		matches
+		!~		doesn't match
+		||		OR
+		&&		AND
+		!		NOT
+
+	System Variables
+		FS ~ Field Separator (default = " ")
+		OFS ~ Output Field Separator (default = " ")
+		$0 ~ the fields
+		NF ~ Number of Fields
+			this is assignable
+			changing this has side-effects
+		NR ~ Number of Records
+		RS ~ Record Separator (default = "\n")
+		ORS ~ Output Record Separator
+		FNR ~ current record number of the current file
+		CONVFMT ~ number to string conversion format (printf style)
+		OFMT ~ Output ForMaT
+		BEGIN ~ 
+		END ~ file is exhausted
+
+	Functions
+		printf(<format>, <string>)
+			printf("|%-10s|\n", "hello") ~> |hello     |
+
+	Parameters
+		awk 'script' var=value inputfile
+			no spaces in parameter assignment
+		awk '{ ... }' directory=$cwd file1 ...
+			pulls in a shell script parameter
+		awk '{ ... }' directory=`pwd` file1 ...
+			back-quotes execute the "pwd" command and insert it's contents into the parameter
+		! can also set system variables via same-named parameter
+		! parameters are assigned in order
+			so, you can re-use a parameter name in one command
+			unless you use the -v argument
 
 
 sed
@@ -33,6 +118,8 @@ sed
 		?line addressing symbol?
 
 	commands:
+		#		comment
+		#n		supresses default output of lines
 		p		outputs the pattern space
 		s		substitute
 			[address]s/pattern/replacement/flags
@@ -49,9 +136,10 @@ sed
 		=		print line number
 		n 		read next line immediately
 		d		delete line
-		a\		places supplied text after the current line
-		i\		places supplied text before the current line
-		c\		replaces the current line with the supplied text
+		y		transform y/abc/xyz/
+		a\		append ~ places supplied text after the current line
+		i\		insert ~ places supplied text before the current line
+		c\		change/replace ~ replaces the current line with the supplied text
 		1d		delete line #1
 		$d 		delete last line
 		/^$/d	regex, delete blank lines
@@ -63,6 +151,23 @@ sed
 		{}		grouping commands
 				the opening brace must end a line
 				the closing brace must be on it's own line
+		r		read file
+			[line-address]r file
+		w		write file
+			[address]w file
+		N 		multiline Next, appends text up to the next embedded newline
+		D 		multiline Delete, deletes up to the first embedded newline
+		P 		multiline Print (print 2 lines)
+		h		hold, overwrite pattern-space with hold-space
+		H		hold, append pattern-space to hold-space
+		g		get, overwrite hold-space with pattern-space
+		G		get, append hold-space to pattern-space
+		x		exchange
+		b		branch, goes to a labeled line in the script
+			:label
+			b label
+			[address]b[label]	if label is left blank
+		t		test, acts like branch IF a successful substitution was made
 
 
 sort

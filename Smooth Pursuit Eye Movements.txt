@@ -1,0 +1,9 @@
+Smooth Pursuit Eye Movements
+
+
+An investigation of saccadic oculomotor movement when reading horizontally or vertically drifting texts.
+
+Drifting texts expose the saccade-pursuit interactions.
+Saccade and pursuit interact to optimize eye movement.
+! Is this a sort of feedback control?
+	What is the feedback?  Parsed language?

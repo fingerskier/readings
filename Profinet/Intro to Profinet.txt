@@ -1,0 +1,105 @@
+Intro to Profinet
+
+
+Trends
+	IIoT
+	Industrie 4.0
+		business
+		functional
+		information
+		communication
+		integration
+		asset
+	Remote diagnostics
+	IT/OT convergence
+	Open standards
+
+Profinet Role
+	data access
+	uptime
+	openness
+
+Profinet
+= mechanism to exachange data
+	controllers, devices, supervisors
+	deterministic
+
+Determinism
+	configuration | TCP/IP (variable execution time)
+	real-time | Layer-2
+	high-speed I/O | bandwidth reservation, IRT channel
+	motion control | scheduling ~ knows topology
+	31.25 micro-sec | fast-forwarding, dynamic frame packaging, fragmentation
+
+GSD
+= General Station Description
+	XML
+
+Device Names
+	location
+	information
+	DCP process:
+		controller broadcasts name
+		device responds with MAC address
+		controller assigns an address
+
+Process
+	fieldbus integration
+	CIR ~ Configuration In Run
+	Time-sync / stamp
+	Scalable Redundancy
+
+Motion Control
+	drives, fans
+		I/O
+	single-axis controller
+		I/O
+	multi-axes
+		I/O w/ coordination, synchronization
+
+	IRT
+		drive synchronization
+		axes coordination
+		bandwidth reservation
+			guarantees delivery and synchronization
+			requires switch to support IRT
+		scheduling
+			< 1 microsecond jitter
+			knows source, destination, and data-size
+
+I-Device
+	controller as an I/O device
+
+Shared Device
+	modules in a single rack can be assigned to different controllers
+
+Simple Device Replacement
+	physical hot-swap without new configuration
+
+Wireless
+	works on any wireless ethernet gear
+
+Functional Safety
+
+Security
+
+Fast Startup
+	pre-negotiation of devices
+
+iPar Server
+
+Application Profiles
+	agreement within a device family on how to use the data (via data structures)
+	above layer-7
+
+Diagnostics
+	Device/Module/Channel
+	SNMP, MIBs, LLDP
+	MIB-II
+	LLDP -> topology
+
+Disparation
+	work cells within a larger network can be linked via VPN
+
+Installation
+	shielding, grounding and connectors can make a HUGE difference in throughput

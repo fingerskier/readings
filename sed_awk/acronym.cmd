@@ -1,0 +1,1 @@
+awk "$1 == search" search=%1 acronym.data
