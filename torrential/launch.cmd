@@ -1,0 +1,1 @@
+torrent create xyz/ -o xyz-tracker.torrent --tracker http://localhost:8000/announce
