@@ -1,0 +1,10 @@
+XSLT Notes
+
+xsl:template
+	match="xpath_stmt"
+
+xsl:for-each
+	select="xpath_stmt"
+
+xsl:value-of
+	select="xpath_select"

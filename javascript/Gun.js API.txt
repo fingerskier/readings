@@ -1,0 +1,47 @@
+Gun.js API
+
+
+Gun()
+
+Gun(URL)
+
+Gun([URL1, URL2, ...])
+
+Gun({
+	peers: {},
+	uuid: ()=>{...},
+	init: true
+})
+
+---
+
+gun.put(data, (error, ok)=>{})
+
+gun.key('key-name')
+
+gun.get('key-name', <(error,node)=>{}, {_options_}>)
+
+---
+
+gun.path('property-name')
+
+gun.back()
+
+gun.on((value,property)=>{})
+
+---
+
+gunRef.map((value,property)=>{})
+
+gunRef.map((value,property)=>{}, true)
+
+gunRef.map((value,property)=>{}, {change:true})
+
+
+gunRef.val((value,property)=>{})
+
+
+gunRef.not((key,kick)=>{})
+
+
+gunRef.set({}, (error,okay)=>{})
