@@ -1,0 +1,17 @@
+JS CLI App Seed
+
+
+inquirer
+	framework for interactive command-line UX
+
+preferences
+	manages CLI user prefs (encrypted)
+
+clui
+	text 'drawings' of tables, gauges, spinners, or sparklines
+
+chalk
+	handles terminal font colors
+
+figlet
+	figfont uber-text display

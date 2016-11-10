@@ -1,0 +1,57 @@
+URL.js Notes
+
+
+Create a global `Url` object
+
+Url.queryString()
+Url.queryString(name)
+Url.queryString(name, notDecoded)
+	find a specific value or return an obj of all
+	notDecoded ~ encodes if true
+
+parseQuery()
+	parse the current location
+
+parseQuery(search)
+	parse the given string
+
+
+getLocation()
+	gets the current URL
+
+getLocation(pathname, push, triggerPopState)
+
+
+hash()
+	returns the current hash
+
+hash(newHash)
+hash(newHash, triggerPopState)
+	newHash ~ the new value
+	trigger... ~ if true trigger the event handlers
+
+
+stringify(queryObj)
+	generates a URI
+
+
+updateSearchParam(param, value, push, triggerPopState)
+	param ~ parameter name
+	value ~ parameter name
+	push ~ if true modifies history
+	trig... ~ if true triggers the event handlers
+
+
+_updateAll(s, push, triggerPopState)
+
+
+triggerPopStateCb()
+
+
+onPopState(callback)
+
+
+removeHash(push, trigger)
+
+
+removeQuery(push, trigger)

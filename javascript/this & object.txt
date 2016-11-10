@@ -1,0 +1,87 @@
+this & object
+
+
+scope = lexical
+context = execution
+	...this is here
+
+
+this = calling context
+	not lexical
+	not declaration
+	not instantiation/reference
+
+
+4 Rules
+	1) The default binding is the global object
+	 	catch-all when the other rules don't apply
+
+	2) When there is a context object it becomes bound to `this`
+		implicit binding can be lost
+		...because references can be passed _before_ being called
+
+	3) `this` can be explicitly bound by .call and .apply
+		`this` can be hard-bound via call() and apply()
+
+	4) `new` binding
+		constructor calls
+		e.g. new Number()
+		- creates a brand new fn
+		- new fn is prototype-linked
+		- new fn becomes `this` for that fn call
+		- returns the result of fn or the new object itself
+
+	precedence
+		4
+		3
+		2
+		1
+
+passing `null` or `undef` to call() or apply() means default binding will be used
+	// spreading parameters
+	foo.apply(null, [2, 3])
+
+	// currying
+	foo = (a,b)=>{}
+	bar = foo.bind(null, 2)
+	bar(3)
+
+DMZ Object
+	empty, non-delegated
+	Φ = Object.create(null)
+
+
+=>
+	arrow functions derive `this` from the enclosing scope
+
+Language Types
+	string
+	number
+	boolean
+	null
+	undefined
+	object
+
+Complex Primitives
+	function
+	array
+
+Built-in Objects
+	String
+	Number
+	Boolean
+	Object
+	Function
+	Array
+	Date
+	RegExp
+	Error
+
+Computed Property Names
+	var myObject = {
+		[prefix + "bar"]: "hello",
+		[prefix + "baz"]: "world"
+	};
+
+
+
