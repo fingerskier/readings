@@ -83,5 +83,64 @@ Computed Property Names
 		[prefix + "baz"]: "world"
 	};
 
+Object.defineProperty(obj, property_name, {
+	 value: val
+	,writable: T/F
+	,configurable: T/F
+	,enumerable: T/F
+})
 
+Object.preventExtensions()
+
+Object.seal() ~ Object.preventExtensions() && configurable:false
+
+Object.freeze() ~ Object.seal() && writable:false
+
+[[Get]]
+	if found, returns a property's value
+	if not, returns undef
+
+[[Put]]
+
+
+Middle-Man Properties
+	var myObject = {
+		get a() {
+			return this._a_;
+		},
+
+		set a(val) {
+			this._a_ = val * 2;
+		}
+	};
+
+obj.hasOwnProperty(propName)
+	this does not check the prototype chain
+
+prop in obj
+	this checks the prototype chain
+
+Object.keys(obj) ~ returns an array of all *enumerable* keys
+
+for (var v of Arr)
+
+Array Iterator (built-in)
+	var myArray = [ 1, 2, 3 ];
+	var it = myArray[Symbol.iterator]();
+
+	it.next(); // { value:1, done:false }
+	it.next(); // { value:2, done:false }
+	it.next(); // { value:3, done:false }
+	it.next(); // { done:true }
+
+Object Iterator (not built-in)
+	var it = myObject[Symbol.iterator]();
+	it.next(); // { value:2, done:false }
+	it.next(); // { value:3, done:false }
+	it.next(); // { value:undefined, done:true }
+
+	// iterate `myObject` with `for..of`
+	for (var v of myObject) {
+		console.log( v );
+	}
 
