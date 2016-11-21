@@ -1,0 +1,59 @@
+/*
+	describe('Array', ()=>{
+		this.slow(500)
+		this.timeout(1000)
+
+		before(('before all')=>{
+		});
+
+		beforeEach(('before each')=>{
+		});
+
+		describe('#indexOf()', ()=>{
+			it('should return -1', ()=>{
+				assert.equal(-1, [1,2,3].indexOf(4))
+			})
+		})
+
+		it('TODO: no callback')
+
+		afterEach(('after each')=>{
+		});
+
+		after(('after all')=>{
+		});
+	})
+
+	context() === desc	ribe()
+
+	specify() === it()
+
+
+	this.slow(500)
+	this.timeout(1000)
+
+
+	.only ~ isolates a test or suite
+
+	.skip ~ skips a test or suite
+		this.skip()
+
+	this.retries(4)	~	will retry the test/suite X number of times
+
+	dynamic tests
+		tests = [...]
+		tests.foreach((test)=>{ ... })
+
+
+	suite('asdf', ()=>{
+		setup(()=>{
+			// ...
+		})
+
+		suite(()=>{
+			test('asdf', ()=>{
+				assert.qwer(a,b,c)
+			})
+		})
+	})
+*/

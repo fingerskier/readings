@@ -103,3 +103,92 @@ Disparation
 
 Installation
 	shielding, grounding and connectors can make a HUGE difference in throughput
+
+
+Device Classification
+	IO-Controller
+		exchange data with IO-Devices
+		Services
+			Cyclic Data Exchange
+				controller <> device
+			Acyclic Data exchange
+				configuration
+				diagnostics
+			Alarms
+			Context Managements
+				connection processing (?)
+	IO-Device
+		sensor/actuator connectors
+	IO-Supervisor
+		HMIs, PCs, or other monitoring/analysis devices
+
+	IOW
+		devices provide data
+		supervisors consume data
+		controllers exchange data
+
+		internally these devices may do other stuff apart from satisfying the standard
+
+	System
+		minimum
+			1 controller
+			1 device
+
+Slot
+	all slots
+	- except for slot zero -
+	have
+		status
+		diagnostic
+		alarm data
+		...for each slot
+	for each data provider [device], on each scan-cycle
+		status and diagnostic info is transferred
+
+	Zero
+		slot zero is the I/O-device itself
+		this slot handles the device data
+			vendor name
+			catalog number
+			hardware version
+			software version
+			blahblahblah
+
+	all slots on a device must refer to the same controller
+
+Module
+	a slot must house a module
+
+	types
+		real
+		virtual
+
+	...gives a slot a specific identity
+
+Channel
+	...is one physical input or output
+
+RDO
+	Record Data Object
+		diagnostics
+		logs
+		identification
+		channel data
+
+	acyclical
+	connection-oriented
+	queued transmission
+
+Event Data
+	diagnostic
+		associated with a channel or I/O-point
+		RDO comms
+		NRT channel
+		an I/O-supervisor must specifically request diag-data
+	alarm
+		_one type of alarm is an alert that urgent diagnostic data exists_
+		RT channel
+		controller only
+
+	data is specifically acknowledged by the controller
+
