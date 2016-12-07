@@ -1,0 +1,26 @@
+D3
+
+
+Data-Driven Documents
+
+.data() ~ bound to nodes
+
+
+enter() = add nodes (handle data for which there is no coincident element)
+
+...		= update nodes
+
+exit()	= remove nodes
+
+
+nodes are native browser thingies
+
+.text()
+.attr()
+.style()
+.property()
+
+.scale
+.linear()
+.domain()
+.range()
