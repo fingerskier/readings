@@ -1,0 +1,10 @@
+Javascript Template Literals
+
+
+`a${a}`
+
+template`a${a}`
+
+var tmpl = (obj)=>`str${obj.thing}`
+
+function total(tots){ return (T)=>`total is ${T}`}

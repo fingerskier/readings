@@ -1,0 +1,29 @@
+Javascript Metaprogramming
+
+
+Code Generation
+	eval
+
+Reflection
+	Functions
+		Function
+			#name
+			#length
+			#bind
+			#call
+			#apply
+
+	Modification
+		delete
+
+	Introspection
+		typeof
+		instanceof
+
+API
+	Symbol
+		create via 
+
+	Reflect
+
+	Proxy

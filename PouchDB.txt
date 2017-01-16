@@ -1,0 +1,36 @@
+PouchDB
+
+var db = new PouchDB(name)
+var db = new PouchDB(url)
+
+db.info().then(function (info) {
+  console.log(info);
+})
+
+PouchDB.debug.enable('*')
+
+
+db.get(name)
+.then((doc)=>{
+	...
+})
+.catch((err)=>{
+	console.error(err)
+})
+
+// Deletions
+	db.remove(doc)
+
+	db.remove(doc._id, doc._rev)
+
+	doc._deleted = true
+	db.put(doc)
+
+
+// Bulk Documents
+	bulkDocs([{...}, {...}, ...])
+
+	allDocs()
+
+
+pouchdb-collate // for arbitrary serialized data
